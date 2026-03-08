@@ -71,13 +71,17 @@ body {
 
 /* SEARCH */
 
+/* SEARCH */
+
 #search {
     display: flex;
     align-items: center;
-    gap: 8px;
+
+    width: 100%;
+    height: 44px;
 
     border-radius: 30px;
-    padding: 8px 14px;
+    padding: 0 12px;
 
     background: #ffffff;
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
@@ -91,37 +95,37 @@ body {
 
 #search input {
     border: none;
-    background-color: transparent;
+    background: transparent;
+
+    flex: 1;
+
     font-size: 16px;
+    height: 100%;
 
-    flex: 1;              /* ocupa o espaço disponível */
-    min-width: 0;         /* evita empurrar a lupa */
-
-    padding: 6px 0;
-}
-
-#search input:focus-visible {
     outline: none;
 }
 
+/* botão da lupa */
+
 #search button {
-    background-color: transparent;
     border: none;
-    cursor: pointer;
+    background: transparent;
+
+    width: 36px;
+    height: 36px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    width: 34px;
-    height: 34px;
-    flex-shrink: 0;       /* impede de sumir */
+    cursor: pointer;
+
+    flex-shrink: 0;
 }
 
 #search button i{
     font-size: 18px;
 }
-
 /* WEATHER */
 
 #weather {
@@ -276,3 +280,4 @@ body {
     }
 
 }
+
