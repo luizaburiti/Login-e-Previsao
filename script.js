@@ -47,7 +47,7 @@ try {
   console.log("Usuário logado:", userCredential.user);
 
   // REDIRECIONA PARA A PÁGINA DA PREVISÃO
-  window.location.href = "previsao.html";
+  window.location.href = "./previsao.html";
 
 } catch (error) {
   msgLogin.textContent = "Erro. Digite as informações corretamente!";
@@ -96,4 +96,5 @@ onAuthStateChanged(auth, (user) => {
     console.log("Nenhum usuário logado");
   }
 });
+
 
