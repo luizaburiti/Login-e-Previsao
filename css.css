@@ -181,6 +181,102 @@ button:hover{
   }
 }
 
+/* ===== RESPONSIVIDADE ===== */
+
+/* tablets e telas médias */
+@media (max-width: 768px){
+
+    body{
+        padding: 90px 15px 20px;
+    }
+
+    .main-title{
+        font-size: 2rem;
+        letter-spacing: 2px;
+        text-align: center;
+    }
+
+    #container{
+        width: 100%;
+        max-width: 420px;
+        padding: 25px;
+    }
+
+    #temp_value{
+        font-size: 42px;
+    }
+
+    #temp_img{
+        width: 100px;
+        height: 100px;
+    }
+
+}
+
+
+/* celulares */
+@media (max-width: 480px){
+
+    body{
+        padding-top: 80px;
+    }
+
+    .header{
+        padding: 18px;
+    }
+
+    .main-title{
+        font-size: 1.6rem;
+        letter-spacing: 1px;
+    }
+
+    #container{
+        width: 100%;
+        max-width: 350px;
+        padding: 20px;
+        border-radius: 20px;
+    }
+
+    #search{
+        padding: 8px 12px;
+    }
+
+    #search input{
+        font-size: 14px;
+    }
+
+    #temp{
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    #temp_img{
+        width: 90px;
+        height: 90px;
+    }
+
+    #temp_value{
+        font-size: 38px;
+        line-height: 40px;
+    }
+
+    #other_infos{
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    #other_infos .info{
+        padding: 8px 10px;
+    }
+
+    #alert img{
+        width: 150px;
+    }
+
+}
+
+
 
 
 
