@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="css.css">
+</head>
+<body>
+
+<div class="containerlogin">
+
+  <!-- LOGIN -->
+  <form id="loginForm">
+    <h1 class="titulo">Login</h1>
+
+    <label class="label">Email</label>
+    <input type="email" placeholder="Digite seu email" id="loginuser" required>
+
+    <label class="label">Senha</label>
+    <input type="password" placeholder="Senha" id="loginpass" required>
+
+    <button type="submit">Entrar</button>
+    <p class="mensagem" id="msgLogin"></p>
+
+    <p class="troca">
+      Não tem conta? <span onclick="mostrarCadastro()">Cadastre-se</span>
+    </p>
+  </form>
+
+  <!-- CADASTRO -->
+  <form id="cadastroForm">
+    <h1 class="titulo">Cadastro</h1>
+
+    <label class="label">Usuário</label>
+    <input type="text" placeholder="Nome de usuário" id="cadastrouser" required>
+
+    <label class="label">Email</label>
+    <input type="email" placeholder="Email" id="cadastroemail" required>
+
+    <label class="label">Senha</label>
+    <input type="password" placeholder="Senha" id="cadastropass" required>
+
+    <button type="submit">Cadastrar</button>
+    <p class="mensagem" id="msgCadastro"></p>
+
+    <p class="troca">
+      Já tem conta? <span onclick="mostrarLogin()">Entrar</span>
+    </p>
+  </form>
+
+</div>
+
+<!-- Firebase Config -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-analytics.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyAB5Y4ZBLMxcb7czvEn9nD4zZETLCUIlY8",
+    authDomain: "login-94efd.firebaseapp.com",
+    projectId: "login-94efd",
+    storageBucket: "login-94efd.firebasestorage.app",
+    messagingSenderId: "689508699181",
+    appId: "1:689508699181:web:9a8a85653c63060c5f3ca4",
+    measurementId: "G-BLPYYNNKPR"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+
+<!-- Script do seu JS (Firebase Auth) -->
+<script type="module" src="script.js"></script>
+</body>
+</html>

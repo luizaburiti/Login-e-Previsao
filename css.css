@@ -1,0 +1,227 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body{
+  min-height: 100vh;
+  background: linear-gradient(180deg, #0b2b45, #1c5072, #05253d);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px; /* garante espaço nas laterais em telas pequenas */
+  overflow-x: hidden; /* evita scroll horizontal */
+}
+
+/* Para o container login em telas pequenas */
+.containerlogin {
+  max-width: 400px;  /* não ultrapassa 400px no desktop */
+  width: 100%;       /* ocupa toda a largura disponível no mobile */
+  box-sizing: border-box;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  overflow-x: hidden;  /* esconde scroll horizontal */
+  overflow-y: hidden;  /* esconde scroll vertical */
+  position: relative;
+}
+body::after{
+  content: "";
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, #0d3f66, transparent 70%);
+  bottom: -150px;
+  right: -150px;
+  filter: blur(90px);
+}
+
+.containerlogin{
+  width: 400px;
+  padding: 60px;
+  border-radius: 28px;
+
+  /* imagem de fundo */
+  background: 
+    linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,1)),
+    url("linda-noite-no-oceano-com-lua-cheia_104785-866.avif");
+
+  background-size: cover;      /* encaixa certinho */
+  background-position: center; /* centraliza */
+  background-repeat: no-repeat;
+
+  box-shadow: 0 15px 40px rgba(0,0,0,0.35);
+  border: 2px solid black;
+  color: white;
+  position: relative;
+  z-index: 2;
+}
+
+form{
+  display: none;
+}
+
+.titulo{
+  font-size: 22px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.label{
+  font-size: 14px;
+  color: #ddd;
+  display: block;
+  text-align: left;
+  margin-bottom: 6px;
+}
+
+input{
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 25px;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  background: rgba(255,255,255,0.15);
+  color: white;
+}
+
+input::placeholder{
+  color: #ccc;
+}
+
+button{
+  width: 100%;
+  padding: 15px;
+  border-radius: 15px;
+  border: none;
+  margin-top: 20px;
+  background: linear-gradient(135deg, #6fd3ff, #5fe0c0);
+  color: #003;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover{
+  opacity: 0.9;
+}
+
+.troca{
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.troca span{
+  color: #6fd3ff;
+  cursor: pointer;
+  font-weight: bold;
+}
+.mensagem{
+  margin-top: 15px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.sucesso{
+  color: #5fe0c0;
+}
+
+.erro{
+  color: #ff6b6b;
+
+}
+/* Media query para telas menores */
+@media (max-width: 500px) {
+  .containerlogin {
+    width: 90%;           /* ocupa quase toda a tela */
+    padding: 40px 20px;   /* menos padding interno */
+    border-radius: 20px;  /* ligeiramente menor */
+  }
+
+  .titulo {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  input {
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+
+  button {
+    padding: 12px;
+    font-size: 16px;
+  }
+
+  .troca {
+    font-size: 13px;
+  }
+
+  .mensagem {
+    font-size: 13px;
+  }
+
+  body::before,
+  body::after {
+    width: 500px;
+    height: 500px;
+    filter: blur(70px);
+  }
+}
+@media (max-width: 500px) {
+  .containerlogin {
+    width: 90%;           /* ocupa quase toda a tela */
+    padding: 30px 20px;   /* menos padding interno */
+    border-radius: 20px;  
+  }
+
+  body::before,
+  body::after {
+    width: 400px;
+    height: 400px;
+    filter: blur(60px);
+  }
+}
+@media (max-width: 500px) {
+  body::before {
+    width: 300px;
+    height: 300px;
+    top: 100px;
+    left: -100px;
+    filter: blur(60px);
+    overflow-x: hidden;  /* esconde scroll horizontal */
+    overflow-y: hidden; 
+  }
+
+  body::after {
+    width: 300px;
+    height: 300px;
+    bottom: -100px;
+    right: -100px;
+    filter: blur(60px);
+  }
+
+  .containerlogin {
+    width: 90%;
+    padding: 30px 15px;
+  }
+}
+
+
