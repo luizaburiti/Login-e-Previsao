@@ -118,6 +118,7 @@ body {
 
 #search button i{
     font-size: 18px;
+    color:#333;
 }
 /* WEATHER */
 
@@ -273,5 +274,6 @@ body {
     }
 
 }
+
 
 
