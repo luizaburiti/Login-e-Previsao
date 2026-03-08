@@ -34,35 +34,25 @@ loginForm.addEventListener("submit", async function(e){  // vai enviar o formul�
 
   if (!email || !senha) { // !se tiver vazio 
     msgLogin.textContent = "Preencha todos os campos!";
-    msgLogin.className = "mensagem erro";
+    msgLogin.className = "Erro. Digite corretam";
     return;
   }
 
-  try {
-    const userCredential = await signInWithEmailAndPassword(auth, email, senha);
-    msgLogin.textContent = "Login realizado com sucesso!";
-    msgLogin.className = "mensagem sucesso";
-    console.log("Usuário logado:", userCredential.user);
+try {
+  const userCredential = await signInWithEmailAndPassword(auth, email, senha);
 
- 
-  } catch (error) {
+  msgLogin.textContent = "Login realizado com sucesso!";
+  msgLogin.className = "mensagem sucesso";
 
-    if (error.code === "auth/user-not-found") {
-      msgLogin.textContent = "Usuário não encontrado!";
-    } 
-    else if (error.code === "auth/wrong-password") {
-      msgLogin.textContent = "Senha incorreta!";
-    } 
-    else if (error.code === "auth/invalid-email") {
-      msgLogin.textContent = "Email inválido!";
-    } 
-    else {
-      msgLogin.textContent = "Erro ao fazer login.";
-    } 
+  console.log("Usuário logado:", userCredential.user);
 
+  // REDIRECIONA PARA A PÁGINA DA PREVISÃO
+  window.location.href = "previsao.html";
+
+} catch (error) {
+  msgLogin.textContent = "Erro. Digite as informações corretamente!";
   msgLogin.className = "mensagem erro";
 }
-  
 
 });
 
@@ -92,22 +82,9 @@ cadastroForm.addEventListener("submit", async function(e){ // td aq é da tela d
     msgCadastro.className = "mensagem sucesso"; // style 
     console.log("Usuário criado:", userCredential.user);
   } 
-
   catch (error) {
-    if (error.code === "auth/email-already-in-use") {
-      msgCadastro.textContent = "Esse email já está cadastrado!";
-    }
-    else if (error.code === "auth/invalid-email") {
-    msgCadastro.textContent = "Email inválido!";
-    }
-    else if (error.code === "auth/weak-password") {
-      msgCadastro.textContent = "A senha é muito fraca!";
-    }
-    else {
-      msgCadastro.textContent = "Erro ao cadastrar usuário.";
-    }
-
-  msgCadastro.className = "mensagem erro";
+    msgCadastro.textContent = "Erro. Usuário já existe!";
+    msgCadastro.className = "mensagem erro";
   }
 });
 
