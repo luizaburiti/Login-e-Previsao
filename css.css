@@ -5,22 +5,31 @@
   font-family: Arial, sans-serif;
 }
 
+html, body{
+  width:100%;
+  max-width:100%;
+  overflow-x:hidden;
+}
+
 body{
   min-height: 100vh;
+
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-  overflow: hidden;
-  background: linear-gradient(135deg,#3b82f6,#6b699b,#6366f1);
+
+  /* removido overflow hidden que quebrava mobile */
+
+  background: linear-gradient(135deg,#3b82f6,#7674a7,#3436ac);
   background-size: 300% 300%;
   animation: gradientMove 10s ease infinite;
 }
 
 @keyframes gradientMove {
-    0% {background-position: 0% 50%;}
-    50% {background-position: 100% 50%;}
-    100% {background-position: 0% 50%;}
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
 }
 
 body::before{
@@ -46,17 +55,17 @@ body::after{
 }
 
 .containerlogin{
-  width: 400px;
+  width: 100%;
+  max-width: 400px;
   padding: 60px;
   border-radius: 28px;
 
-  /* imagem de fundo */
   background: 
     linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)),
     url("linda-noite-no-oceano-com-lua-cheia_104785-866.avif");
 
-  background-size: cover;      /* encaixa certinho */
-  background-position: center; /* centraliza */
+  background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
 
   box-shadow: 0 15px 40px rgba(0,0,0,0.90);
@@ -91,6 +100,9 @@ input{
   border-radius: 12px;
   border: none;
   outline: none;
+
+  font-size:16px; /* impede zoom no celular */
+
   background: rgba(255,255,255,0.15);
   color: white;
 }
@@ -142,12 +154,21 @@ button:hover{
 .erro{
   color: #ff6b6b;
 }
-/* Media query para telas menores */
+
+/* ===== RESPONSIVO ===== */
+
 @media (max-width: 500px) {
+
+  body{
+    min-height:100dvh;
+    padding:20px;
+  }
+
   .containerlogin {
-    width: 90%;           /* ocupa quase toda a tela */
-    padding: 40px 20px;   /* menos padding interno */
-    border-radius: 20px;  /* ligeiramente menor */
+    width: 100%;
+    max-width: 100%;
+    padding: 40px 25px;
+    border-radius: 20px;
   }
 
   .titulo {
@@ -156,12 +177,12 @@ button:hover{
   }
 
   input {
-    padding: 10px;
+    padding: 12px;
     margin-bottom: 20px;
   }
 
   button {
-    padding: 12px;
+    padding: 13px;
     font-size: 16px;
   }
 
@@ -179,104 +200,7 @@ button:hover{
     height: 500px;
     filter: blur(70px);
   }
-}
-
-/* ===== RESPONSIVIDADE ===== */
-
-/* tablets e telas médias */
-@media (max-width: 768px){
-
-    body{
-        padding: 90px 15px 20px;
-    }
-
-    .main-title{
-        font-size: 2rem;
-        letter-spacing: 2px;
-        text-align: center;
-    }
-
-    #container{
-        width: 100%;
-        max-width: 420px;
-        padding: 25px;
-    }
-
-    #temp_value{
-        font-size: 42px;
-    }
-
-    #temp_img{
-        width: 100px;
-        height: 100px;
-    }
 
 }
-
-
-/* celulares */
-@media (max-width: 480px){
-
-    body{
-        padding-top: 80px;
-    }
-
-    .header{
-        padding: 18px;
-    }
-
-    .main-title{
-        font-size: 1.6rem;
-        letter-spacing: 1px;
-    }
-
-    #container{
-        width: 100%;
-        max-width: 350px;
-        padding: 20px;
-        border-radius: 20px;
-    }
-
-    #search{
-        padding: 8px 12px;
-    }
-
-    #search input{
-        font-size: 14px;
-    }
-
-    #temp{
-        flex-direction: column;
-        text-align: center;
-        gap: 10px;
-    }
-
-    #temp_img{
-        width: 90px;
-        height: 90px;
-    }
-
-    #temp_value{
-        font-size: 38px;
-        line-height: 40px;
-    }
-
-    #other_infos{
-        grid-template-columns: 1fr;
-        gap: 10px;
-    }
-
-    #other_infos .info{
-        padding: 8px 10px;
-    }
-
-    #alert img{
-        width: 150px;
-    }
-
-}
-
-
-
 
 
